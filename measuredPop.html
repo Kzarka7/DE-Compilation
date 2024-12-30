@@ -1,0 +1,231 @@
+<!doctype.html>
+
+<html>
+
+<head>
+
+	<title> Measured Population | Newton's Law of Cooling / Heating | Differential Equation </title>
+
+	<script>
+	
+		function toggleSidebar () {
+            const sidebar = document.getElementById('sidebar');
+            const header = document.querySelector('.header');
+			const inp = document.querySelector('.inp');
+            sidebar.classList.toggle('hidden');
+            header.classList.toggle('shifted');
+			inp.classList.toggle('shifted');
+        }
+		
+		function solver () {
+			
+			let IP = Number(document.getElementById("P0").value);
+			let CP = Number(document.getElementById("P1").value);
+			let Ct = Number(document.getElementById("t1").value);
+			let Mt = Number(document.getElementById("t").value);
+			
+			let k = (Math.log(CP / IP)) / Ct;
+			let result = IP * Math.exp(k * Mt);
+			document.getElementById("result").innerHTML = "Measured Population: " + String(result.toFixed(2));
+		
+		}
+	
+	</script>
+
+	<style>
+	
+		body {
+			background-color: #212121;
+			margin: 0;
+			align-items: center;
+		}
+		
+		p, a {
+			color: white;
+			font-family: "consolas", sans-serif;
+		}
+		
+		.sidebar {
+			height: 100%;
+            width: 250px;
+            background-color: #171717;
+			position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            transition: transform 0.3s ease;
+			font-size: 30px;
+            transform: translateX(0);
+        }
+		
+		
+		.sidebar.hidden {
+            transform: translateX(-250px);
+        }
+		
+		.sidebar p {
+			font-size: 25px;
+			text-align: center;
+			padding-top: -100px;
+		}
+
+        .sidebar a {
+			text-decoration: none;
+			background-color: #171717;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			text-align: center;
+			font-size: 20px;
+			transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+        }
+		
+        .sidebar a:hover {
+			background-color: #2f2f2f;
+			font-size: 80%;
+			padding-left: 25px;
+			padding-right: 25px;%;
+        }
+		
+		.toggle-button {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%);
+            background-color: #383838;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+		
+		.header {
+            margin-left: 250px;
+            transition: margin-left 0.3s ease;
+			display: flex;
+			flex-direction: row;
+			background-color: #383838;
+			font-size: 25px;
+		}
+		
+		.inp {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+			display: flex;
+			height: 100%;
+			font-size: 20px;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			border: 10px;
+		}
+
+        .header.shifted, .inp.shifted {
+            margin-left: 0;
+        }
+		
+		.b, .d, .e {
+			padding: 20px;
+            transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+            font-size: 90%;
+			text-decoration: none;
+		}
+		
+		.b:hover, .d:hover {
+			background-color: #000000;
+            font-size: 100%;
+		}
+		
+		button {
+            color: white;
+            display: block;
+            background-color: #383838;
+            transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+            font-size: 90%;
+			margin-top: 15px;
+			margin-left: 40%;
+			border: none;
+			border-radius: 10px;
+			padding: 10px 20px;
+			cursor: pointer;
+            font-size: 16px;
+			font-family: "consolas", sans-serif;
+        }
+			
+		input {
+            color: white;
+            text-decoration: none;
+            background-color: #333333;
+            transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+            font-size: 90%;
+			border-radius: 10px;
+			margin: 10px;
+			width: 350px;
+            border: 1px solid #38444d;	
+            padding: 10px;
+            font-size: 16px;
+			font-family: "consolas", sans-serif;
+        }
+		
+		input:focus, .submitButton:focus {
+			background-color: #000000;
+			font-size: 100%;
+		}
+		
+		.c a{
+			background-color: #04aa6d;
+			font-size: 20px;
+		}
+		
+		.b {
+			background-color: #04aa6d;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<div class = "sidebar" id = "sidebar">
+		<p> <b> Variables </b> </p>
+		<a href = "initialGrowth.html"> Initial Population </a>
+		<div class = "c" style = "display: flex; flex-direction: column;">
+			<a href = "measuredPop.html"> Measured Population </a>
+		</div>
+        <a href = "measuredPopTime.html"> Measured Time </a>
+        <a href = "growthRate.html"> Growth Rate </a>
+		<button class = "toggle-button" onclick = "toggleSidebar ()"> ☰ </button>
+    </div>	
+	
+	<div class = "header" style = "justify-content: space-between;">
+		<div style = "display: flex; flex-direction: row;">
+			<a class = "b" style = "flex-grow: 1;" href = "growth.html"> <b> GROWTH AND DECAY </b> </a>
+			<a class = "d" style = "flex-grow: 1;" href = "newton.html"> <b> NEWTON'S COOLING / HEATING </b> </a>
+		</div>
+			<a class = "e" style = "text-align: center; font-size: 90%;" href = "index.html"> <b> DIFFERENTIAL EQUATION </b> </a>
+	</div>
+	
+	<div class = "inp"> 
+		<div style = "flex-grow: 12;">
+			<p style = "font-size: 25px; padding-top: 20px;"> <b> CALCULATING MEASURED POPULATION </b> </p>
+			<p> Initial Population (P<sub>0</sub>)</p>
+			<input id = "P0" placeholder = "Enter initial population"> 
+			<p> Change of Populaton (P<sub>1</sub>)</p>
+			<input id = "P1" placeholder = "Enter change of population"> 
+			<p> Change of Time (t<sub>1</sub>)</p>
+			<input id = "t1" placeholder = "Enter change of time"> 
+			<p> Measured Time (t)</p>
+			<input id = "t" placeholder = "Enter measured time"> 
+			<button class = "submitButton" onclick = "solver ()"> Submit </button>
+			
+			<p id = "c"> </p>
+			<p id = "k"> </p> 
+			<p id = "result"></p>
+		</div>
+	</div>	
+	
+</body>
+
+</html>
