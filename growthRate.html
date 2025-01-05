@@ -1,0 +1,55 @@
+<!doctype.html>
+
+<html>
+<head>
+
+	<title> Growth Rate | Newton's Law of Cooling / Heating | Differential Equation </title>
+
+	<script src="script.js"> </script>
+	
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body>
+
+	<div class = "sidebar" id = "sidebar">
+		<p> <b> Variables </b> </p>
+		<a href = "initialPop.html"> Initial Population </a>
+		<a href = "measuredPop.html"> Measured Population </a>
+		<a href = "measuredPopTime.html"> Measured Time </a>
+		<div style = "display: flex; flex-direction: column;">
+			<a href = "growthRate.html" style = "background-color: #04aa6d;"> Growth Rate </a>
+		</div>
+		<button class = "toggle-button" onclick = "toggleSidebar ()"> ☰ </button>
+    </div>	
+	
+	<div class = "header" style = "justify-content: space-between;">
+		<div style = "display: flex; flex-direction: row;">
+			<a class = "b" style = "flex-grow: 1; background-color: #04aa6d;" href = "growth.html"> <b> GROWTH AND DECAY </b> </a>
+			<a class = "d" style = "flex-grow: 1;" href = "newton.html"> <b> NEWTON'S COOLING / HEATING </b> </a>
+		</div>
+			<a class = "e" style = "text-align: center; font-size: 90%;" href = "index.html"> <b> DIFFERENTIAL EQUATION </b> </a>
+	</div>
+	
+	<div class = "interFace"> 
+		<div style = "flex-grow: 12;">
+			<p style = "font-size: 25px; padding-top: 20px;"> <b> CALCULATING GROWTH RATE </b> </p>
+			<p> Initial Population (P<sub>0</sub>)</p>
+			<input id = "P0" placeholder = "Enter initial population"> 
+			<p> Change of Populaton (P<sub>1</sub>)</p>
+			<input id = "P1" placeholder = "Enter change of population"> 
+			<p> Change of Time (t<sub>1</sub>)</p>
+			<input id = "t1" placeholder = "Enter change of time"> 
+			<p> Measured Time (t)</p>
+			<input id = "t" placeholder = "Enter measured time"> 
+			<button class = "submitButton" onclick = "calculate ('growthRate')"> Submit </button>
+			
+			<p id = "c"> </p>
+			<p id = "k"> </p> 
+			<p id = "result"></p>
+		</div>
+	</div>	
+	
+</body>
+</html>

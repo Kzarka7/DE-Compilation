@@ -1,0 +1,60 @@
+<!doctype.html>
+
+<html>
+<head>
+
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Measured Time | Newton's Law of Cooling / Heating | Differential Equation </title>
+
+	<script src="script.js"> </script>
+	
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body>
+
+	<div class = "sidebar" id = "sidebar">
+		<p> <b> Variables </b> </p>
+		<a href = "initialTemp.html"> Initial Temperature </a>
+        <a href = "roomTemp.html"> Room Temperature </a>
+        <a href = "measuredTemp.html"> Measured Temperature </a>
+		<div style = "display: flex; flex-direction: column;">
+        <a href = "measuredTime.html" style = "background-color: #04aa6d;"> Measured Time </a>
+		</div>
+		<button class = "toggle-button" onclick = "toggleSidebar ()"> ☰ </button>
+    </div>	
+	
+	<div class = "header" style = "justify-content: space-between;">
+		<div style = "display: flex; flex-direction: row;">
+			<a class = "b" style = "flex-grow: 1;" href = "growth.html"> <b> GROWTH AND DECAY </b> </a>
+			<a class = "d" style = "flex-grow: 1; background-color: #04aa6d;" href = "newton.html"> <b> NEWTON'S COOLING / HEATING </b> </a>
+		</div>
+			<a class = "e" style = "text-align: center; font-size: 90%;" href = "index.html"> <b> DIFFERENTIAL EQUATION </b> </a>
+	
+	</div>
+	
+	<div class = "interFace"> 
+		<div style = "flex-grow: 12;">
+			<p style = "font-size: 25px; padding-top: 20px;"> <b> CALCULATING MEASURED TIME </b> </p>
+			<p> Initial Temperature (T<sub>0</sub>)</p>
+			<input id = "T0" placeholder = "Enter initial temperature">
+			<p> Room Temperature (Tm)</p>
+			<input id = "Tm" placeholder = "Enter room temperature"> 
+			<p> Change of Temperature (T<sub>1</sub>)</p>
+			<input id = "T1" placeholder = "Enter change of temperature"> 
+			<p> Change of Time (t<sub>1</sub>)</p>
+			<input id = "t1" placeholder = "Enter change of time"> 
+			<p> Measured Temperature (T)</p>
+			<input id = "T" placeholder = "Enter measured temperature"> 
+			<button class = "submitButton" onclick = "calculate ('measuredTime')"> Submit </button>
+			
+			<p id = "c"> </p>
+			<p id = "k"> </p> 
+			<p id = "result"> </p>
+		</div>
+	</div>	
+	
+</body>
+</html>

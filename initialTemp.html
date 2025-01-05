@@ -1,0 +1,54 @@
+<!doctype.html>
+
+<html>
+<head>
+
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Initial Temperature | Newton's Law of Cooling / Heating | Differential Equation </title>
+	<!-- JavaScript Formulas and sidebar command -->
+	<script src="script.js"> </script>
+	<!-- CSS designs for body -->
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+
+<body>
+
+	<div class = "sidebar" id = "sidebar">
+		<p> <b> Variables </b> </p>
+		<div style = "display: flex; flex-direction: column;">
+			<a href = "initialTemp.html" style = "background-color: #04aa6d;"> Initial Temperature </a>
+		</div>
+        <a href = "roomTemp.html"> Room Temperature </a>
+        <a href = "measuredTemp.html"> Measured Temperature </a>
+        <a href = "measuredTime.html"> Measured Time </a>
+		<button class = "toggle-button" onclick = "toggleSidebar ()"> ☰ </button>
+    </div>	
+	
+	<div class = "header" style = "justify-content: space-between;">
+		<div style = "display: flex; flex-direction: row;">
+			<a class = "b" style = "flex-grow: 1;" href = "growth.html"> <b> GROWTH AND DECAY </b> </a>
+			<a class = "d" style = "flex-grow: 1; background-color: #04aa6d;" href = "newton.html"> <b> NEWTON'S COOLING / HEATING </b> </a>
+		</div>
+			<a class = "e" style = "text-align: center; font-size: 90%;" href = "index.html"> <b> DIFFERENTIAL EQUATION </b> </a>
+	</div>
+	
+	<div class = "interFace"> 
+		<div style = "flex-grow: 12;">
+			<p style = "font-size: 25px; padding-top: 20px;"> <b> CALCULATING INITIAL TEMPERATURE </b> </p>
+			<p> Room Temperature (Tm) </p>
+			<input id = "Tm" placeholder = "Enter room temperature">
+			<p> Measured Temperature (T) </p>
+			<input id = "T" placeholder = "Enter measured temperature"> 
+			<p> Measured Time (t)</p>
+			<input id = "t" placeholder = "Enter measured time"> 
+			<p> Constant (k) </p>
+			<input id = "k" placeholder = "Enter constant"> 
+			<button class = "submitButton" onclick = "calculate ('initialTemp')"> Submit </button>
+			<p id = "result"></p>
+		</div>
+	</div>	
+	
+</body>
+</html>

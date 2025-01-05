@@ -1,0 +1,146 @@
+/*
+Hover - highlighter when pointing
+Focus - changes the color and size of the inputs after clicking
+*/
+body {
+	background-color: #212121;
+	margin: 0;
+	align-items: center;
+	}
+		
+p, a {
+	color: white;
+	font-family: "consolas", sans-serif;
+	}
+		
+.sidebar {
+	height: 100%;
+    width: 250px;
+    background-color: #171717;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	transition: transform 0.3s ease;
+	font-size: 30px;
+	transform: translateX(0);
+	}
+/* Reducing the width into 0px making it not visible */
+.sidebar.hidden {
+	transform: translateX(-250px);
+	}
+		
+.sidebar p {
+	font-size: 25px;
+	text-align: center;
+	padding-top: -100px;
+	}
+
+.sidebar a {
+	text-decoration: none;
+	background-color: #171717;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	font-size: 20px;
+	transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+	}
+		
+.sidebar a:hover {
+	background-color: #2f2f2f;
+	font-size: 80%;
+	padding-left: 25px;
+	padding-right: 25px;%;
+	}
+		
+.toggle-button {
+	position: absolute;
+	top: 50%;
+	right: -40px;
+	transform: translateY(-50%);
+	background-color: #383838;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	}
+		
+.header {
+	margin-left: 250px;
+	transition: margin-left 0.3s ease;
+	display: flex;
+	flex-direction: row;
+	background-color: #383838;
+	font-size: 25px;
+	}
+		
+.interFace {
+	margin-left: 250px;
+	padding: 20px;
+	transition: margin-left 0.3s ease;
+	display: flex;
+	height: 100%;
+	font-size: 20px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border: 10px;
+	}
+/* Moving the header and interface to the left */
+.header.shifted, .interFace.shifted {
+	margin-left: 0;
+	}
+/* 
+.b - header that prints "GROWTH AND DECAY"
+.d - header that prints "NEWTON COOLING..."
+.e - header that prints "DIFFERENTIAL EQUATION"
+*/
+.b, .d, .e {
+	padding: 20px;
+	transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+	font-size: 90%;
+	text-decoration: none;
+	}
+		
+.b:hover, .d:hover {
+	background-color: #000000;
+	font-size: 100%;
+	}
+		
+button {
+	color: white;
+	display: block;
+	background-color: #383838;
+	transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+	font-size: 90%;
+	margin-top: 15px;
+	margin-left: 40%;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 16px;
+	font-family: "consolas", sans-serif;
+	}
+			
+input {
+	color: white;
+	text-decoration: none;
+	background-color: #333333;
+	transition: background-color 0.5s, font-size 0.5s, padding-left 0.5s, padding-right 0.5s;
+	font-size: 90%;
+	border-radius: 10px;
+	margin: 10px;
+	width: 350px;
+	border: 1px solid #38444d;	
+	padding: 10px;
+	font-size: 16px;
+	font-family: "consolas", sans-serif;
+}
+		
+input:focus, .submitButton:focus {
+	background-color: #000000;
+	font-size: 100%;
+	}
